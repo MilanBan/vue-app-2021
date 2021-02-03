@@ -1,12 +1,21 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <navigation />
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
+
+<script>
+import Navigation from './components/Navigation'
+
+export default {
+  components: {
+    Navigation
+  }
+}
+</script>
 
 <style>
 #app {
@@ -23,7 +32,7 @@
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #c8d3dd;
 }
 
 #nav a.router-link-exact-active {
