@@ -52,9 +52,10 @@ export default {
 
   methods: {
     login() {
-      User.login(this.form).then(() => {
+      User.login(this.form)
+      .then(response => {
         this.$root.$emit("login", true);
-        localStorage.setItem("auth", "true");
+        localStorage.setItem("token", response.data);
         this.$router.push({
           name: "Dashboard"
         });

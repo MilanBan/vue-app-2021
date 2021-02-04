@@ -41,7 +41,7 @@ const router = new VueRouter({
 })
 
 function isLoggedIn() {
-  return localStorage.getItem("auth");
+  return localStorage.getItem("token");
 }
 
 router.beforeEach((to, from, next) => {

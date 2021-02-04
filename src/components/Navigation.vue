@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <div class="container">
       <div class="navbar-header">
-        <router-link class="navbar-brand" to="/">Laravel Sanctum</router-link>
+        <router-link class="navbar-brand" to="home">Laravel Sanctum</router-link>
       </div>
       <ul class="nav navbar-nav">
         <router-link
@@ -50,12 +50,12 @@ export default {
     this.$root.$on("login", () => {
       this.isLoggedIn = true;
     });
-    this.isLoggedIn = !!localStorage.getItem("auth");
+    this.isLoggedIn = !!localStorage.getItem("token");
   },
   methods: {
     logout() {
       User.logout().then(() => {
-        localStorage.removeItem("auth");
+        localStorage.removeItem("token");
         this.isLoggedIn = false;
         this.$router.push({ name: "Home" });
       });
